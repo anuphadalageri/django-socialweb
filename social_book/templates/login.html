@@ -1,0 +1,124 @@
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Book!</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+  </head>
+  <body style="background: #ce75b2;
+  background: radial-gradient(#dd76bc 30%,#285AEB 100%); background-image: url('https://www.bluleadz.com/hubfs/Blog_pics/social-media-blue.jpeg'); background-size: cover; padding: 0;
+  margin: 0; ">
+  
+  
+    
+  
+   
+  <section class="section" style="position: relative; left:800px;">
+   
+    <div  class="container" >
+
+      <h1 style="
+      line-height: 200px;
+      margin-top: -100px;
+      position: absolute;
+      margin-right:10px;
+      top: 18%;
+      width: 100%; font-weight:900; font-size:50px; right:600px;color: #FFFFFF;
+      font-style:italic;
+      font-weight:bolder;
+      font-size:100px;
+      text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px rgb(233, 18, 18), 0 0 20px #0aa9be, 0 0 20px #db0faf, 0 0 40px #f0ff18, 0 0 55px #ca7607, 0 0 60px #053d6b;"  >Social Hub</h1><br><br>
+     
+     
+
+<div class="pull-right" style="bottom: 0; width: 70%;">
+  <div class="column is-half" >
+   
+   
+    <div style="
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px); top:90px; right: 530px;width: 380px; height: 550px;
+    padding: 2rem;
+    border-radius: 1rem; color: #9cc8dd;
+    text-decoration: none; font-size: 1rem;  ">
+    
+    <div class="card-content" style="text-align: center; bottom:90px;">
+      
+          <form method="post" action="" role="form">
+          {% csrf_token %}
+          <img src="{% static 'img/as.jpeg' %}" width="100">
+           <!--h3 class="title is-3" style="text-shadow: 4px 4px 6px rgb(165, 25, 0); text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;font:bold; font-family: cursive; font-weight:bold;color: #000307;">SOCIAL HUB</h3-->
+
+            <div class="field">
+              <p class="control has-icons-left"><br><br>
+              <label class="label is-medium" style="color: red;">Username</label>
+                {{ form.username }}
+                <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+          </div>
+
+              <div class="field">
+              <p class="control has-icons-left">
+              <label class="label is-medium" style="color: red;">Password</label>
+                {{ form.password }}
+               
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+
+      {% if form.errors %}
+      <div class="row">
+        <div class="col s12">
+          <span style="color: red; font-weight: bold;">Your username or password did not match.</span>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="field">
+      <p class="control">
+        <button type="submit" value="login" class="button is-success" style="color: black;">
+          Login
+        </button>
+      </p>
+    </div>
+
+    <input type="hidden" name="next" value="{{ next }}">
+
+    <strong style="color:red;">Don't have an account? Sign up</strong><br><br>
+
+
+    
+    <a href="{% url 'signup' %}" class="button is-info" style="background-color: lightgreen; color:#000307">SignUp</a>
+
+
+  </form>
+
+
+
+
+    </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+
+    </div>
+  </section>
+
+  </body>
+</html>
+

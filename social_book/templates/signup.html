@@ -1,0 +1,106 @@
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Hub!</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body style="background: #ce75b2;
+  background: radial-gradient(#dd76bc 30%,#285AEB 100%); background-image: url('https://www.thechiefstoryteller.com/wp-content/uploads/2010/05/Chief-Storyteller-Blog-2010-0505-article-go-global-social-media.jpg'); background-size: cover; padding: 0;
+  margin: 0;">
+  
+  
+
+  <section class="section">
+    <div class="container">
+
+<div class="columns is-mobile has-text-centered" >
+  <div class="column is-half is-offset-one-quarter">
+    <h1 ><strong style="font-style:italic;
+    font-size:50px;
+    font-weight:bolder;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #421d30 0px 0px 20px, #0e969b 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    color: #FFFFFF;" >SOCIAL HUB</strong></h1>
+    <div class="card" style="background: rgba(187, 157, 157, 0.822);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); top:90px; right: 300px;width: 450px; height: 550px;
+    padding: 2rem;
+    border-radius: 1rem; color: #4d4ae8;
+    text-decoration: none; font-size: 1rem; top:10px; ">
+    <div class="card-content">
+
+    <form method="post" action="" role="form">
+    {% csrf_token %}
+    <h3 class="title is-3">Create an account</h3>
+
+            <div class="field">
+              <p class="control has-icons-left">
+              <label class="label is-medium">Username</label>
+                {{ form.username }}
+                <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+          </div>
+
+            <div class="field">
+              <p class="control has-icons-left">
+              <label class="label is-medium">Email</label>
+                {{ form.email }}
+                <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+          </div>
+
+            <div class="field">
+              <p class="control has-icons-left">
+              <label class="label is-medium">Password</label>
+                {{ form.password }}
+                <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+          </div>
+
+            <div class="field">
+              <p class="control has-icons-left">
+              <label class="label is-medium">Confirm password</label>
+                {{ form.confirm_password }}
+                <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+          </div>
+
+      <div class="row">
+        <div class="col s12">
+          <span style="color: red; font-weight: bold;">{{ form.errors }}</span>
+        </div>
+      </div>
+
+      <div class="field">
+      <p class="control">
+        <button type="submit" name="action" class="button is-success">
+          Create
+        </button>
+      </p>
+    </div>
+
+
+      </div>
+</div>
+
+
+    </div>
+  </section>
+
+    </form>
+  </div>
+

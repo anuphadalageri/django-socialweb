@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% if books %}
+<div class="col-xs-1" align="center">
+{% for each_book in books %} 
+<div style="
+   background: #385a94;    
+   border-radius: 30%;
+   height: 310px;
+   width: 250px;
+   position: relative;">
+    <figure class="image is-128x128">
+      {% if each_book.picture %}
+      <h1 style="
+      font-weight: bold;
+      font-size: 32px;">{{each_book.first_name}} {{ each_book.last_name}}</h1>
+       <a href="/{{each_book}}"> <img style="
+        width: 500px;
+        height: 200px;
+        object-fit: cover;";
+        class="is-rounded" src="{{ each_book.picture.url }}"></a>
+      {% else %}
+        <img class="is-rounded" src="https://bulma.io/images/placeholders/50x50.png">
+      {% endif %}
+    </figure>
+</div>
+    <br><br><br><br>
+{% endfor %}
+{% elif books_1 %}
+<div class="col-xs-1" align="center">
+    {% for each_book in books_1 %} 
+    <div style="
+       background: #385a94;    
+       border-radius: 30%;
+       height: 310px;
+       width: 250px;
+       position: relative;">
+        <figure class="image is-128x128">
+          {% if each_book.picture %}
+          <h1 style="
+          font-weight: bold;
+          font-size: 32px;">{{each_book.first_name}} {{ each_book.last_name}}</h1>
+           <a href="/{{each_book}}"> <img style="
+            width: 500px;
+            height: 200px;
+            object-fit: cover;";
+            class="is-rounded" src="{{ each_book.picture.url }}"></a>
+          {% else %}
+            <img class="is-rounded" src="https://bulma.io/images/placeholders/50x50.png">
+          {% endif %}
+        </figure>
+    </div>
+        <br><br><br><br>
+    {% endfor %}
+{% else %}
+<div class="col-xs-1" align="center">
+<img style="height: 400px;
+width: 300px;" src="{% static "img/soory.png" %}" alt="My image"/>
+<h1 style="
+      font-weight: bold;
+      font-size: 32px;">NO USER FOUND OF NAME "{{book_name}}"</h1>
+{% endif %}
+</div>
+</div>
+{% endblock %}
